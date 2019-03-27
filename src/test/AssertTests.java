@@ -1,4 +1,4 @@
-import static org.hamcrest.CoreMatchers.allOf;
+/*import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.both;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -8,27 +8,20 @@ import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.sameInstance;
 import static org.hamcrest.CoreMatchers.startsWith;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import org.hamcrest.core.CombinableMatcher;
+
 
 import java.util.Arrays;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.hamcrest.core.CombinableMatcher;
-import org.junit.Test;
 
 public class AssertTests {
     @Test
     public void testAssertArrayEquals() {
         byte[] expected = "trial".getBytes();
         byte[] actual = "trial".getBytes();
-        assertArrayEquals("failure - byte arrays not same", expected, actual);
+        assertArrayEquals(expected, actual, "failure - byte arrays not same");
     }
 
     @Test
@@ -38,28 +31,28 @@ public class AssertTests {
 
     @Test
     public void testAssertFalse() {
-        assertFalse("failure - should be false", false);
+        assertFalse(false, "failure - should be false");
     }
 
     @Test
     public void testAssertNotNull() {
-        assertNotNull("should not be null", new Object());
+        assertNotNull(new Object(), "should not be null");
     }
 
     @Test
     public void testAssertNotSame() {
-        assertNotSame("should not be same Object", new Object(), new Object());
+        assertNotSame(new Object(), new Object(), "should not be same Object");
     }
 
     @Test
     public void testAssertNull() {
-        assertNull("should be null", null);
+        assertNull(null, "should be null");
     }
 
     @Test
     public void testAssertSame() {
         Integer aNumber = Integer.valueOf(768);
-        assertSame("should be same", aNumber, aNumber);
+        assertSame(aNumber, aNumber, "should be same");
     }
 
     // JUnit Matchers assertThat
@@ -92,3 +85,4 @@ public class AssertTests {
         assertTrue("failure - should be true", true);
     }
 }
+*/

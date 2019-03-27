@@ -1,13 +1,16 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class DummyLoginServiceTest {
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testLogin() {
+        assertThrows(IllegalArgumentException.class, () -> {
             DummyLoginService dml = new DummyLoginService();
             dml.Login("", "");
-        }
+        });
+    }
 
     @Test
     public void testLogin2() {

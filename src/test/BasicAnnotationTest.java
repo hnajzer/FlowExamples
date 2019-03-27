@@ -1,30 +1,31 @@
-import org.junit.*;
+import org.junit.jupiter.api.*;
+
 
 public class BasicAnnotationTest {
     private static String theTestItem;
 
     // Run once, e.g. Database connection, connection pool
-    @BeforeClass
+    @BeforeAll
     public static void runOnceBeforeClass() {
         theTestItem = "item";
-        System.out.println("@BeforeClass - initializing DB connection");
+        System.out.println("@BeforeAll - initializing DB connection");
     }
 
     // Run once, e.g close connection, cleanup
-    @AfterClass
+    @AfterAll
     public static void runOnceAfterClass() {
-        System.out.println("@AfterClass - closing DB connection");
+        System.out.println("@AfterAll - closing DB connection");
     }
 
     // Creating a similar object and share for all @Test
-    @Before
+    @BeforeEach
     public void runBeforeTestMethod() {
-        System.out.println("@Before - creating a new test table with super exciting data");
+        System.out.println("@BeforeEach - creating a new test table with super exciting data");
     }
 
-    @After
+    @AfterEach
     public void runAfterTestMethod() {
-        System.out.println("@After - deleting the test table");
+        System.out.println("@AfterEach - deleting the test table");
     }
 
     @Test
